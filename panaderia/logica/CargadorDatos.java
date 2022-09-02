@@ -3,8 +3,6 @@ package panaderia.logica;
 import java.util.logging.Logger;
 import java.util.List;
 
-import panaderia.datos.DatosPruebaProductos;
-import panaderia.datos.DatosPruebaTiendas;
 import panaderia.datos.IFuenteDatos;
 import panaderia.datos.LectorArchivos;
 import panaderia.entidades.base.Producto;

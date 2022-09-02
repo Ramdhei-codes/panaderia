@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.List;
 import java.util.Scanner;
 
-import panaderia.datos.LectorArchivos;
 import panaderia.logica.ControlRecorrido;
 
 /**
@@ -66,7 +65,6 @@ public class ProgramaPancita {
 
 		if (!this.control.existeTienda(codigoTienda)) {
 			System.out.println("Tienda no encontrada");
-			consola.close();
 			return;
 		}
 
@@ -77,13 +75,12 @@ public class ProgramaPancita {
 		String ruta = "";
 		ruta = consola.next();
 
-		// File archivoPedido = new File(ruta);
+		File archivoPedido = new File("./archivos/ordenes/"+ruta);
 
-		// if(!archivoPedido.exists()) {
-		// System.out.println("Problemas con la lectura del archivo");
-		// consola.close();
-		// return;
-		// }
+		if (!archivoPedido.exists()) {
+			System.out.println("Problemas con la lectura del archivo");
+			return;
+		}
 
 		this.control.crearOrden(ruta, codigoTienda);
 
@@ -102,7 +99,6 @@ public class ProgramaPancita {
 			System.out.println("¿Acepta la orden? (S/N)");
 			aceptaOrden = consola.next();
 			if (aceptaOrden.equals("N")) {
-				consola.close();
 				return;
 			}
 			aceptaOrden = "N";

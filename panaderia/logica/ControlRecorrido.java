@@ -1,5 +1,6 @@
 package panaderia.logica;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -55,7 +56,7 @@ public class ControlRecorrido {
 				crearDetalle(this.ordenEnProceso, datoOrden);	
 			}
 
-		} catch (Exception e) {
+		} catch (IOException e) {
 			Logger logger = Logger.getLogger(ControlRecorrido.class.getName());
 			logger.warning("Error al obtener los datos de las órdenes");
 		}

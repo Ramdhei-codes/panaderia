@@ -1,5 +1,6 @@
 package panaderia.datos;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -17,5 +18,5 @@ public interface IFuenteDatos {
 	 *  lo importante es que se pueda organizar en 
 	 *  conjuntos de cadenas).
 	 */
-	public abstract List<String[]> obtenerDatosBase() throws Exception;
+	public abstract List<String[]> obtenerDatosBase() throws IOException;
 }

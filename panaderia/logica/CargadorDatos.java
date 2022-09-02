@@ -36,7 +36,7 @@ public class CargadorDatos {
 		// POR UNA QUE LEA LOS DATOS DE UN ARCHIVO.
 
 		try {
-			IFuenteDatos fuenteDatosTiendas = new LectorArchivos("tiendas.txt");
+			IFuenteDatos fuenteDatosTiendas = new LectorArchivos("datosBase/tiendas.txt");
 
 			List<String[]> datosBaseTiendas = fuenteDatosTiendas.obtenerDatosBase();
 			this.cargarDatosTiendas(datosBaseTiendas);
@@ -44,7 +44,7 @@ public class CargadorDatos {
 			// FALTA CARGAR LOS DATOS DE LOS PRODUCTOS:
 			// PRIMERO HACERLO CON LA CLASE DE PRUEBA,
 			// Y LUEGO CON LA QUE LEE DE UN ARCHIVO.
-			IFuenteDatos fuenteDatosProductos = new LectorArchivos("productos.txt"); // CAMBIAR POR EL OBJETO
+			IFuenteDatos fuenteDatosProductos = new LectorArchivos("datosBase/productos.txt"); // CAMBIAR POR EL OBJETO
 																						// CORRESPONDIENTE
 			List<String[]> datosBaseProductos = fuenteDatosProductos.obtenerDatosBase();
 			this.cargarDatosProductos(datosBaseProductos);

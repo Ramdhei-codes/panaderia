@@ -3,6 +3,7 @@ package panaderia.datos;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +16,9 @@ public class LectorArchivos implements IFuenteDatos {
     }
 
     @Override
-    public List<String[]> obtenerDatosBase() throws Exception {
+    public List<String[]> obtenerDatosBase() throws IOException {
         List<String[]> listaDatos = new ArrayList<>();
-        File lectorArchivo = new File("./archivos/datosBase/" + nombreArchivo);
+        File lectorArchivo = new File("./archivos/" + nombreArchivo);
         BufferedReader lectorBufer = new BufferedReader(new FileReader(lectorArchivo));
 
         String lineaArchivo;

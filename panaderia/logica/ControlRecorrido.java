@@ -7,6 +7,7 @@ import panaderia.datos.DatosPruebaOrdenes;
 import panaderia.datos.DatosPruebaProductos;
 import panaderia.datos.EscritorArchivoOrdenes;
 import panaderia.datos.IFuenteDatos;
+import panaderia.datos.LectorArchivos;
 import panaderia.entidades.base.Producto;
 import panaderia.entidades.base.Recorrido;
 import panaderia.entidades.base.Tienda;
@@ -42,7 +43,7 @@ public class ControlRecorrido {
 	}
 
 	public void crearOrden(String nombreArchivoProductos, String codigoTienda) {
-		IFuenteDatos datosPruebaOrdenes = new DatosPruebaOrdenes();
+		IFuenteDatos datosPruebaOrdenes = new LectorArchivos("ordenes/"+nombreArchivoProductos);
 		Tienda tiendaOrden = this.recorrido.buscarTienda(codigoTienda);
 
 		this.ordenEnProceso = new OrdenPedido(tiendaOrden);

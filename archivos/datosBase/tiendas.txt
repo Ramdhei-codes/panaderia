@@ -1,1 +1,4 @@
 10-10;LaEsquina
+10-20;El encuentro
+10-30;Tinteadero
+10-40;Ricuras Don Jaima

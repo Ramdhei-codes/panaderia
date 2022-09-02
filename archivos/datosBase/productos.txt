@@ -1,2 +1,8 @@
 100;Pan de chocolate;15000
-200;other product;10000
+200;Croissant;1000
+300;Empanada de Carne;1500
+400;Empanada de Pollo;1600
+500;Buñuelo;1200
+600;Milhoja;4000
+700;Pandequeso;1500
+800;Pandebono;800

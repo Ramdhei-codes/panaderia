@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Principal",
+            "request": "launch",
+            "mainClass": "panaderia.vista.Principal",
+            "projectName": "panaderia_26ee5482"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

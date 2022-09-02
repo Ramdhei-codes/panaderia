@@ -1,1 +1,2 @@
-100 Pan de chocolate 15000
+100;Pan de chocolate;15000
+200;other product;10000

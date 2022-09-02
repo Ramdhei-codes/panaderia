@@ -6,6 +6,7 @@ import java.util.List;
 import panaderia.datos.DatosPruebaProductos;
 import panaderia.datos.DatosPruebaTiendas;
 import panaderia.datos.IFuenteDatos;
+import panaderia.datos.LectorArchivos;
 import panaderia.entidades.base.Producto;
 import panaderia.entidades.base.Recorrido;
 import panaderia.entidades.base.Tienda;
@@ -35,7 +36,7 @@ public class CargadorDatos {
 		// POR UNA QUE LEA LOS DATOS DE UN ARCHIVO.
 
 		try {
-			IFuenteDatos fuenteDatosTiendas = new DatosPruebaTiendas();
+			IFuenteDatos fuenteDatosTiendas = new LectorArchivos("tiendas.txt");
 
 			List<String[]> datosBaseTiendas = fuenteDatosTiendas.obtenerDatosBase();
 			this.cargarDatosTiendas(datosBaseTiendas);
@@ -43,7 +44,8 @@ public class CargadorDatos {
 			// FALTA CARGAR LOS DATOS DE LOS PRODUCTOS:
 			// PRIMERO HACERLO CON LA CLASE DE PRUEBA,
 			// Y LUEGO CON LA QUE LEE DE UN ARCHIVO.
-			IFuenteDatos fuenteDatosProductos = new DatosPruebaProductos(); // CAMBIAR POR EL OBJETO CORRESPONDIENTE
+			IFuenteDatos fuenteDatosProductos = new LectorArchivos("productos.txt"); // CAMBIAR POR EL OBJETO
+																						// CORRESPONDIENTE
 			List<String[]> datosBaseProductos = fuenteDatosProductos.obtenerDatosBase();
 			this.cargarDatosProductos(datosBaseProductos);
 		} catch (Exception e) {

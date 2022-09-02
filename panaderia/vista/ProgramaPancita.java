@@ -96,16 +96,18 @@ public class ProgramaPancita {
 
 		// PREGUNTAR SI DESEA ACEPTAR. SI ACEPTA:
 		// INFORMAR AL CONTROL PARA QUE GUARDE LA ORDEN.
-		System.out.println("¿Acepta la orden? (S/N)");
-		String aceptaOrden = "";
-		aceptaOrden = consola.next();
+		String aceptaOrden = "S";
+		while (aceptaOrden.equals("S")) {
+			System.out.println("¿Acepta la orden? (S/N)");
+			aceptaOrden = consola.next();
+			if (aceptaOrden.equals("N")) {
+				consola.close();
+				return;
+			}
+			aceptaOrden = "N";
+			control.guardarOrden();
 
-		if (aceptaOrden.equals("N")) {
-			consola.close();
-			return;
 		}
 
-		control.guardarOrden();
-		consola.close();
 	}
 }

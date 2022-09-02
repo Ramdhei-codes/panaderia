@@ -36,8 +36,9 @@ public class ProgramaPancita {
 		Scanner consola = new Scanner(System.in);
 		String respuesta = "S";
 		while (respuesta.equals("S")) {
-			System.out.print("¿Desea crear orden de pedido (S/N)?");
-			respuesta = consola.next();
+			System.out.println("¿Desea crear orden de pedido (S/N)?");
+			respuesta = consola.nextLine();
+
 			if (respuesta.equals("S")) {
 				this.procesarUnaOrden();
 			}
@@ -53,15 +54,14 @@ public class ProgramaPancita {
 	 */
 	private void procesarUnaOrden() {
 		Scanner consola = new Scanner(System.in);
+
 		// COMPLETAR:
 
 		// PRIMERO PEDIR EL CÓDIGO DE LA TIENDA
 		// Y VERIFICAR SI EXISTE.
 		System.out.println("Ingrese el código de la tienda: ");
 		String codigoTienda = "";
-		if (consola.hasNext()) {
-			codigoTienda = consola.next();
-		}
+		codigoTienda = consola.next();
 
 		if (!this.control.existeTienda(codigoTienda)) {
 			System.out.println("Tienda no encontrada");
@@ -74,10 +74,8 @@ public class ProgramaPancita {
 		// Y SOLICITAR AL CONTROL CREAR LA ORDEN.
 		System.out.println("Ingrese la ruta con los productos del pedido: ");
 		String ruta = "";
-		if (consola.hasNext()) {
-			ruta = consola.next();
+		ruta = consola.next();
 
-		}
 		// File archivoPedido = new File(ruta);
 
 		// if(!archivoPedido.exists()) {
@@ -100,9 +98,7 @@ public class ProgramaPancita {
 		// INFORMAR AL CONTROL PARA QUE GUARDE LA ORDEN.
 		System.out.println("¿Acepta la orden? (S/N)");
 		String aceptaOrden = "";
-		if (consola.hasNext()) {
-			aceptaOrden = consola.next();
-		}
+		aceptaOrden = consola.next();
 
 		if (aceptaOrden.equals("N")) {
 			consola.close();
